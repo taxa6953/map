@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIS Offline</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <div id="sidebar">
+        <h3>📝 اطلاعات منطقه</h3>
+        <textarea id="polygon-info" rows="4" placeholder="توضیحات منطقه را وارد کنید..."></textarea>
+        <button id="save-info" disabled>💾 ذخیره توضیحات</button>
+        <h3>💾 ذخیره و بارگذاری مناطق</h3>
+        <button id="save-geojson">💾 ذخیره مناطق</button>
+        <button id="load-geojson">📂 بارگذاری مناطق</button>
+        <input type="file" id="geojson-file" accept=".geojson">
+        <h3>✏️ ترسیم و ویرایش مناطق</h3>
+        <button id="draw-polygon">📐 ترسیم چندضلعی</button>
+        <button id="edit-polygon" disabled>✍️ ویرایش</button>
+        <button id="delete-polygon" disabled>🗑️ حذف</button>
+        <h3>🗺️ تغییر نقشه پس‌زمینه</h3>
+        <button id="toggle-map">🌍 تغییر نقشه</button>
+
+        <h3>📏 اندازه‌گیری فاصله</h3>
+        <button id="measure-start">🎯 انتخاب نقطه اول</button>
+        <button id="measure-end" disabled>📍 انتخاب نقطه دوم</button>
+        <p id="distance-result"></p>
+        <h3>🎨 راهنمای رنگ‌ها</h3>
+        <div id="legend"></div>
+
+        <h3>🔍 جستجو</h3>
+        <input type="text" id="search-box" placeholder="نام مکان یا X,Y">
+        <button id="search-button">جستجو</button>
+        <h3>🔄 مدیریت تغییرات</h3>
+        <ul id="edits-list"></ul>
+        <button id="undo-edit">↩️ بازگردانی آخرین ویرایش</button>
+        <button id="gps-button">📍 نمایش موقعیت من</button>
+        <h3>📌 افزودن نقطه جدید</h3>
+        <label>نام نقطه:</label>
+        <input type="text" id="point-name">
+        <label>توضیحات:</label>
+        <textarea id="point-description"></textarea>
+        <button id="add-point">افزودن نقطه</button>
+        <h2>لایه‌ها</h2>
+        <ul id="layers-list"></ul>
+        <button id="toggle-dark-mode">🌙 حالت تاریک</button>
+    </div>
+    
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
